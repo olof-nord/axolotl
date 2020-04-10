@@ -6,11 +6,10 @@
       <router-view />
     </div>
   </div>
-
 </template>
+
 <script>
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/style.scss'
 import HeaderComp from "@/components/Header.vue"
 import ErrorModal from "@/components/ErrorModal.vue"
 export default {
@@ -28,7 +27,6 @@ export default {
       return this.$store.state.error
     }
   }
-
 }
 </script>
 <style>

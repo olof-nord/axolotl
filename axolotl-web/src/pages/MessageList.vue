@@ -376,7 +376,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+@import '../assets/style.scss';
 .header {
   text-align: left;
 }
@@ -437,13 +438,22 @@ export default {
     padding: 0px 20px;
 }
 
-.message{
-  padding:5px;
+.message {
+  padding: 5px 8px;
   border-radius:10px;
   max-width:85%;
-  background-color:#dfdfdf;
+  color: $message-color;
+  background-color: $received-message-bg;
   text-align:left;
   min-width:100px;
+
+  &::v-deep a {
+    color: $sent-message-link;
+
+    &:visited {
+      color: $sent-message-link-visited;
+    }
+  }
 }
 .sender{
   font-size:0.9rem;
@@ -455,7 +465,7 @@ video,
     max-height: 80vh;
 }
 .sent .message{
-  background-color:#d3f2d7;
+  background-color: $sent-message-bg;
 }
 .error .message{
   background-color:#f7663a;
@@ -466,8 +476,6 @@ video,
   left: 0px;
   padding: 4px;
   height: -3px;
-  background-color:
-  #FFF;
   -webkit-transition: width 0.5s, height 0.5s;
   transition: width 0.5s, height 0.5s;
   position: fixed;
@@ -488,7 +496,8 @@ video,
   bottom: 0px;
   width: 100%;
   max-height: 150px;
-  border:1px solid #2090ea;
+  border:1px solid $message-input-border;
+  background-color: $input-bg;
   height: 35px;
   padding:3px 10px;
   transition: width 0.5s, height 0.5s;
