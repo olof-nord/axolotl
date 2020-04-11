@@ -255,7 +255,6 @@ a:hover.chat-container{
   margin-right: 10px;
 }
 .chatList .counter {
-  border: 1px solid #FFF;
   border-radius: 50%;
   background-color: #2090ea;
   display:flex;
