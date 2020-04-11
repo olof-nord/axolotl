@@ -12,6 +12,7 @@
 // import './assets/style.scss'
 import HeaderComp from "@/components/Header.vue"
 import ErrorModal from "@/components/ErrorModal.vue"
+import("./assets/style.scss")
 import { mapState } from 'vuex';
 export default {
   name: 'axolotl-web',
@@ -40,11 +41,11 @@ export default {
     var userLang = navigator.language || navigator.userLanguage;
     this.$language.current = userLang;
     console.log(this.getCookie("darkMode"), "a",document.cookie)
-    if (this.getCookie("darkMode")==0) {
-      import("./assets/style.scss")
-      } else {
-        import("./assets/style-dark.scss")
-      }
+    // if (this.getCookie("darkMode")==0) {
+    //
+    //   } else {
+    //     import("./assets/style-dark.scss")
+    //   }
   },
   computed: {
     error () {

@@ -90,7 +90,7 @@ export default {
     position:fixed;
     width:100vw;
     height:100vh;
-    background-color: $body-bg;
+    // background-color: $body-bg;
     top:0px;
     left:0px;
     z-index:12;
@@ -128,8 +128,8 @@ export default {
     align-items:center;
   }
   .vue-phone-number-input {
-    background-color: $input-bg;
-    color: $input-color;
+    // background-color: $input-bg;
+    // color: $input-color;
   }
 </style>
 

@@ -1,5 +1,14 @@
-@import './light.scss';
-@import './common-variables.scss';
+.dark{
+  @import './dark.scss';
+  @import './common-variables.scss';
 
+  @import 'node_modules/bootstrap/scss/bootstrap';
+  @import 'node_modules/bootstrap-vue/src/index.scss';
+}
+
+.light{
+  @import './light.scss';
+  @import './common-variables.scss';
+}
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';

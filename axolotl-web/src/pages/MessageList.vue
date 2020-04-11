@@ -450,16 +450,16 @@ export default {
   padding: 5px 8px;
   border-radius:10px;
   max-width:85%;
-  color: $message-color;
-  background-color: $received-message-bg;
+  // color: $message-color;
+  // background-color: $received-message-bg;
   text-align:left;
   min-width:100px;
 
   &::v-deep a {
-    color: $sent-message-link;
+    // color: $sent-message-link;
 
     &:visited {
-      color: $sent-message-link-visited;
+      // color: $sent-message-link-visited;
     }
   }
 }
@@ -473,7 +473,7 @@ video,
     max-height: 80vh;
 }
 .sent .message{
-  background-color: $sent-message-bg;
+  // background-color: $sent-message-bg;
 }
 .status .message{
   background-color:transparent;
@@ -533,8 +533,8 @@ video,
   bottom: 0px;
   width: 100%;
   max-height: 150px;
-  border:1px solid $message-input-border;
-  background-color: $input-bg;
+  // border:1px solid $message-input-border;
+  // background-color: $input-bg;
   height: 35px;
   padding:3px 10px;
   transition: width 0.5s, height 0.5s;

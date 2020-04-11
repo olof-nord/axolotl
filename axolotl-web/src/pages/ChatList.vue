@@ -221,7 +221,7 @@ export default {
   font-size:15px;
 }
 .row.chat-entry{
-  border-bottom: 1px solid $chat-entry-border-color;
+  // border-bottom: 1px solid $chat-entry-border-color;
   padding: 10px;
 }
 a.chat-container{
