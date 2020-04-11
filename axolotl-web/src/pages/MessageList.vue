@@ -475,6 +475,9 @@ video,
 .sent .message{
   background-color: $sent-message-bg;
 }
+.dark .sent .message{
+  background-color: $sent-message-bg-dark;
+}
 .status .message{
   background-color:transparent;
   width:100%;
@@ -542,7 +545,10 @@ video,
   ::-webkit-scrollbar {
       display: block;
   }
-
+}
+.dark #messageInput{
+  border:1px solid $message-input-border-dark;
+  background-color: $input-bg-dark;
 }
 textarea:focus, input:focus{
     outline: none;

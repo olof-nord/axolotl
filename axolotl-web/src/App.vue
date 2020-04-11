@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="getCookie('darkMode')==1?'dark':'light'">
     <header-comp></header-comp>
     <div class="container">
       <error-modal  v-if="error"/>
@@ -23,7 +23,7 @@ window.getCookie = function(cname) {
       }
       return false;
 }
-if (window.getCookie("darkMode")) {
+if (window.getCookie("darkMode")==1) {
   console.log("Set dark")
   import ('./assets/dark.scss');
 } else {
@@ -39,9 +39,26 @@ export default {
     HeaderComp,
     ErrorModal
   },
+  methods:{
+    getCookie(cname) {
+          var name = cname + "=";
+          var ca = document.cookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return false;
+    }
+  },
   mounted(){
     var userLang = navigator.language || navigator.userLanguage;
     this.$language.current = userLang;
+
   },
   computed: {
     error () {
