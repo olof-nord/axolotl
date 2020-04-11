@@ -1,0 +1,17 @@
+// Start bootstrap override
+$dropdown-bg: $body-bg;
+$dropdown-link-hover-bg: $hover-bg;
+$dropdown-color: $body-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-border-color: $body-color;
+
+$modal-content-color: $body-color;
+$modal-content-bg: $body-bg;
+$modal-content-border-color: $body-color;
+$close-color: $body-color;
+
+$link-color: $primary;
+// End of bootstrap override
+
+$sent-message-link-visited: darken($sent-message-link, 10%);
