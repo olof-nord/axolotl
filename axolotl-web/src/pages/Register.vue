@@ -78,7 +78,8 @@ export default {
 
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import '../assets/style.scss';
   .info,
   .register{
     display:flex;
@@ -89,7 +90,7 @@ export default {
     position:fixed;
     width:100vw;
     height:100vh;
-    background-color:#FFF;
+    background-color: $body-bg;
     top:0px;
     left:0px;
     z-index:12;
@@ -125,6 +126,10 @@ export default {
     display:flex;
     justify-content:center;
     align-items:center;
+  }
+  .vue-phone-number-input {
+    background-color: $input-bg;
+    color: $input-color;
   }
 </style>
 

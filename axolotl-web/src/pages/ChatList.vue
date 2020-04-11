@@ -141,7 +141,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
+@import '../assets/style.scss';
+
 .actions-header {
     position: fixed;
     background-color: #173d5c;
@@ -219,8 +221,7 @@ export default {
   font-size:15px;
 }
 .row.chat-entry{
-  border-bottom:1px solid grey;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 1px solid $chat-entry-border-color;
   padding: 10px;
 }
 a.chat-container{
