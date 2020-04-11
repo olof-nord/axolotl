@@ -9,7 +9,11 @@
 </template>
 
 <script>
-import './assets/style.scss'
+if (dark) {
+  import ('./assets/dark.scss');
+} else {
+  import ('./assets/light.scss');
+}
 import HeaderComp from "@/components/Header.vue"
 import ErrorModal from "@/components/ErrorModal.vue"
 export default {

@@ -13,3 +13,8 @@ $sent-message-bg: #d3f2d7;
 $sent-message-link: $primary;
 
 $message-input-border: #2090ea;
+
+@import './common-variables.scss';
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';

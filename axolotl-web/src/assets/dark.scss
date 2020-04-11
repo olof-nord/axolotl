@@ -26,3 +26,8 @@ $sent-message-link: #004090;
 $sent-message-link-visited: #003060;
 
 $message-input-border: $body-bg;
+
+@import './common-variables.scss';
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
