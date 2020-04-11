@@ -55,8 +55,29 @@
 </template>
 
 <script>
-import moment from 'moment';
+window.getCookie = function(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return false;
+}
+if (window.getCookie("darkMode")==1) {
+  console.log("Set dark cl")
+  import ('../assets/dark.scss');
+} else {
+  console.log("Set light cl")
 
+  import ('../assets/light.scss');
+}
+import moment from 'moment';
 export default {
   name: 'ChatList',
   props: {
@@ -142,7 +163,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import '../assets/style.scss';
 
 .actions-header {
     position: fixed;
