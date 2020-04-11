@@ -224,6 +224,9 @@ export default {
   border-bottom: 1px solid $chat-entry-border-color;
   padding: 10px;
 }
+.dark .row.chat-entry{
+  border-bottom: 1px solid $chat-entry-border-color-dark;
+}
 a.chat-container{
   color:#000;
 }

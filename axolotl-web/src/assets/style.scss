@@ -1,5 +1,59 @@
-@import './dark.scss';
-@import './common-variables.scss';
+// light styles
+$primary: #2090ea;
+$hover-bg: #eee;
 
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/bootstrap-vue/src/index.scss';
+$body-bg: #fff;
+$body-color: #333;
+$input-bg: #fff;
+
+$input-bg: #999;
+$input-border-color: #999;
+$input-color: #000;
+$input-plaintext-color: #000;
+$input-placeholder-color: #555;
+$input-focus-bg: #bbb;
+$input-focus-border-color: $primary;
+$input-border-width: 2px;
+$input-box-shadow: unset;
+$input-focus-box-shadow: unset;
+
+$chat-entry-border-color: #333;
+
+$message-color: #fff;
+$received-message-bg: #2880b0;
+$sent-message-bg: #29b786;
+$sent-message-link: #004090;
+$sent-message-link-visited: #003060;
+
+$message-input-border: $body-bg;
+
+
+// dark styles
+$primary-dark: #2090ea;
+$hover-bg-dark: #444;
+
+// Bootstrap variables
+$body-bg-dark: #000;
+$body-color-dark: #ccc;
+$input-bg-dark: #999;
+
+$input-bg-dark: #999;
+$input-border-color-dark: #999;
+$input-color-dark: #000;
+$input-plaintext-color-dark: #000;
+$input-placeholder-color-dark: #555;
+$input-focus-bg-dark: #bbb;
+$input-focus-border-color-dark: $primary;
+$input-border-width-dark: 2px;
+$input-box-shadow-dark: unset;
+$input-focus-box-shadow-dark: unset;
+
+$chat-entry-border-color-dark: #333;
+
+$message-color-dark: #fff;
+$received-message-bg-dark: #2880b0;
+$sent-message-bg-dark: #29b786;
+$sent-message-link-dark: #004090;
+$sent-message-link-visited-dark: #003060;
+
+$message-input-border-dark: $body-bg-dark;
