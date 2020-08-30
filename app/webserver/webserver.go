@@ -120,6 +120,9 @@ func wsReader(conn *websocket.Conn) {
 			}
 			log.Debugln("[axolotl] Enter chat ", id)
 			sendMessageList(id)
+			if id[0] == '+' {
+				textsecure.GetProfile(id)
+			}
 		case "setDarkMode":
 			setDarkMode := SetDarkMode{}
 			json.Unmarshal([]byte(p), &setDarkMode)
