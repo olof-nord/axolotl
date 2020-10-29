@@ -129,10 +129,14 @@ jobs:
           sudo apt-get install flatpak
           flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
           flatpak install --user -y flathub org.flatpak.Builder
+          flatpak install --user -y flathub org.freedesktop.Platform//20.08
+          flatpak install --user -y flathub org.freedesktop.Sdk//20.08
+          flatpak install --user -y flathub org.freedesktop.Sdk.Extension.golang//20.08
+          flatpak install --user -y flathub org.freedesktop.Sdk.Extension.node12//20.08
 
       - name: Build the Flatpak
         run: |
-          flatpak run --user org.flatpak.Builder --verbose --user --install-deps-from=flathub --repo=repo build flatpak/org.nanuc.Axolotl.yml
+          flatpak run --user org.flatpak.Builder --verbose --user --repo=repo build flatpak/org.nanuc.Axolotl.yml
           flatpak build-bundle repo axolotl.flatpak org.nanuc.Axolotl
 
       - name: Upload the built Flatpak artifact
