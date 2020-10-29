@@ -137,7 +137,8 @@ jobs:
       - name: Build the Flatpak
         run: |
           flatpak run --user org.flatpak.Builder --verbose --user --repo=repo build flatpak/org.nanuc.Axolotl.yml
-          flatpak build-bundle repo axolotl.flatpak org.nanuc.Axolotl
+          flatpak repo --info --verbose repo
+          flatpak build-bundle --verbose repo axolotl.flatpak org.nanuc.Axolotl
 
       - name: Upload the built Flatpak artifact
         uses: actions/upload-artifact@v2
