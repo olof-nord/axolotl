@@ -115,3 +115,29 @@ jobs:
           name: Axolotl-x86_64-${{ github.run_number }}.AppImage
           path: Axolotl-x86_64.AppImage
           retention-days: 1
+
+  package-flatpak:
+    name: Package as a Flatpak
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Setup Flatpak
+        run: |
+          apt-get update && apt-get install -y flatpak flatpak-builder
+          flatpak install org.freedesktop.Platform//20.08
+          flatpak install org.freedesktop.Sdk//20.08
+          flatpak install org.freedesktop.Sdk.Extension.golang//20.08
+          flatpak install org.freedesktop.Sdk.Extension.node12//20.08
+
+      - name: Build the Flatpak
+        run: |
+          flatpak-builder --repo=repo build flatpak/org.nanuc.Axolotl.yml
+          flatpak build-bundle repo axolotl.flatpak org.nanuc.Axolotl
+
+      - name: Upload the built Flatpak artifact
+        uses: actions/upload-artifact@v2
+        with:
+          retention-days: 1
