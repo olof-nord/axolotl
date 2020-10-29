@@ -132,7 +132,7 @@ jobs:
 
       - name: Build the Flatpak
         run: |
-          flatpak run --user org.flatpak.Builder --user --install-deps-from=flathub --repo=repo build flatpak/org.nanuc.Axolotl.yml
+          flatpak run --user org.flatpak.Builder --verbose --user --install-deps-from=flathub --repo=repo build flatpak/org.nanuc.Axolotl.yml
           flatpak build-bundle repo axolotl.flatpak org.nanuc.Axolotl
 
       - name: Upload the built Flatpak artifact
