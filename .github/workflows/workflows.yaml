@@ -127,13 +127,12 @@ jobs:
       - name: Setup Flatpak
         run: |
           sudo apt-get install flatpak
-          flatpak remote-add --user --verbose --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
           flatpak install --user -y flathub org.flatpak.Builder
-          flatpak run --user org.flatpak.Builder --version
 
       - name: Build the Flatpak
         run: |
-          flatpak-builder --user --install-deps-from=flathub --repo=repo build flatpak/org.nanuc.Axolotl.yml
+          flatpak run --user org.flatpak.Builder --install-deps-from=flathub --repo=repo build flatpak/org.nanuc.Axolotl.yml
           flatpak build-bundle repo axolotl.flatpak org.nanuc.Axolotl
 
       - name: Upload the built Flatpak artifact
