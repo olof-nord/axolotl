@@ -127,7 +127,7 @@ jobs:
       - name: Setup Flatpak
         run: |
           sudo apt-get install flatpak flatpak-builder
-          flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
           flatpak install org.freedesktop.Platform//20.08
           flatpak install org.freedesktop.Sdk//20.08
           flatpak install org.freedesktop.Sdk.Extension.golang//20.08
