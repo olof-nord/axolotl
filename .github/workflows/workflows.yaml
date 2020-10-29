@@ -126,10 +126,10 @@ jobs:
 
       - name: Setup Flatpak
         run: |
-          sudo apt-get install flatpak flatpak-builder
+          sudo apt-get install flatpak
           flatpak remote-add --user --verbose --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          flatpak install --user -y flathub org.flatpak.Builder
           flatpak-builder --version
-          # flatpak install flathub org.flatpak.Builder
 
       - name: Build the Flatpak
         run: |
