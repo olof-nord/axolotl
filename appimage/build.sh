@@ -6,7 +6,7 @@ set -eu -o pipefail
 for build_dependency in go npm appimagetool
 do
   if [ ! -f "$(command -v "${build_dependency}")" ]; then
-    echo "${dependency} is required!"
+    echo "${build_dependency} is required!"
     echo "Please install all build dependencies first."
     exit 1
   fi
