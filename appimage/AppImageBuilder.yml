@@ -1,0 +1,47 @@
+version: 1
+
+script:
+  # Remove any previous build
+  - rm -rf $APPDIR | true
+  # Make required directories
+  - mkdir -p $APPDIR/usr/bin/axolotl-web $APPDIR/usr/share/icons/128x128 $APPDIR/usr/share/metainfo
+  # put install files in place
+  - cp -f axolotl $APPDIR/usr/bin/axolotl
+  - cp -rf axolotl-web/dist $APPDIR/usr/bin/axolotl-web
+  # put metadata in place
+  - cp -f appimage/axolotl.png $APPDIR/usr/share/icons/128x128/axolotl.png
+  - cp -f appimage/axolotl.appdata.xml $APPDIR/usr/share/metainfo/axolotl.appdata.xml
+
+AppDir:
+  path: ./AppDir
+
+  app_info:
+    id: org.nanuc.axolotl
+    name: axolotl
+    icon: axolotl
+    version: 0.9.8
+    exec: usr/bin/axolotl
+    exec_args: "-axolotlWebDir=usr/bin/axolotl-web/dist $@"
+
+  apt:
+    arch: amd64
+    sources:
+      - sourceline: 'deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ bionic main'
+        key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
+
+    include:
+      # These are required for Electron
+      - libx11-dev
+      - zlib1g-dev
+      - libpng-dev
+      - libxtst-dev
+    exclude: []
+
+  runtime:
+    env:
+      # Specify axolotl-web location
+      AXOLOTL_WEB_DIR: usr/bin/axolotl-web/dist
+
+AppImage:
+  sign-key: None
+  arch: x86_64
