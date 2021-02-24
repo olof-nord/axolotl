@@ -11,4 +11,4 @@ COPY axolotl ./
 # Add axolotl-web bundle
 COPY axolotl-web/dist ./axolotl-web/dist
 
-RUN appimage-builder --log INFO
+RUN appimage-builder --log INFO --skip-test

@@ -30,11 +30,18 @@ AppDir:
         key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
 
     include:
-      # These are required for Electron
-      - libx11-dev
-      - zlib1g-dev
-      - libpng-dev
-      - libxtst-dev
+      # Image base requirements
+      - bash
+      - coreutils
+      # Electron dependencies
+      - libasound2
+      - libnotify4
+      - libnspr4
+      - libnss3
+      - libpcre3
+      - libpulse0
+      - libxss1
+      - libxtst6
     exclude: []
 
   runtime:
