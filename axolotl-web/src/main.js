@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, { createApp } from 'vue';
 import App from './App.vue'
 import VueNativeSock from 'vue-native-websocket'
 import store from './store/store'
@@ -50,7 +50,6 @@ var defaultSanitizeOptions = {
 };
 Vue.use(VueSanitize, defaultSanitizeOptions);
 Vue.use(GetTextPlugin, { translations: translations, defaultLanguage: 'en', })
-Vue.config.productionTip = false
 
 // set backend adress
 var websocketAdress = "ws://";
@@ -78,10 +77,6 @@ Vue.use(VueNativeSock, websocketAdress,
   }
 )
 
-export default new Vue({
-  store,
-  router,
-  render: h => h(App),
-}).$mount('#app')
+export default createApp(App).use(router).use(store).mount('#app');
 
 // Vue.use(VueSocketio, `//${window.location.host}`, store);
